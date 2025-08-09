@@ -8,37 +8,40 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // East African inspired color palette
+        // Client's professional color palette
         primary: {
-          50: '#eef2ff',
-          100: '#e0e7ff',
-          500: '#6366f1',
-          600: '#4f46e5',
-          700: '#4338ca',
-          900: '#312e81',
+          50: '#eff6ff',
+          100: '#dbeafe',
+          400: '#60a5fa',
+          500: '#2563eb',
+          600: '#1d4ed8',
+          700: '#1e40af',
+          800: '#1e3a8a',
+          900: '#1e2766',
         },
         secondary: {
-          50: '#fef3c7',
-          100: '#fde68a',
-          500: '#f59e0b',
-          600: '#d97706',
-          700: '#b45309',
+          50: '#f9fafb',
+          100: '#f3f4f6',
+          200: '#e5e7eb',
+          300: '#d1d5db',
+          400: '#9ca3af',
+          500: '#6b7280',
+          600: '#4b5563',
+          700: '#374151',
+          800: '#1f2937',
+          900: '#1a1a1a',
         },
         accent: {
-          50: '#dcfce7',
-          100: '#bbf7d0',
-          500: '#10b981',
-          600: '#059669',
-          700: '#047857',
+          50: '#eff6ff',
+          100: '#dbeafe',
+          500: '#2563eb',
+          600: '#1d4ed8',
+          700: '#1e40af',
         },
-        // Cultural colors
-        sunset: '#ea580c',
-        sunrise: '#facc15',
-        earth: '#a3a3a3',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Poppins', 'system-ui', 'sans-serif'],
+        display: ['Inter', 'system-ui', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

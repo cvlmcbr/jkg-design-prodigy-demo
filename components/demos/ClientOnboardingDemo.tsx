@@ -154,37 +154,37 @@ export default function ClientOnboardingDemo() {
   const progress = (currentStep / totalSteps) * 100
 
   return (
-    <div className="min-h-screen pt-32 pb-16 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+    <div className="min-h-screen pt-32 pb-16 bg-white">
       <div className="container-africa max-w-4xl">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full text-blue-700 text-sm font-medium mb-4">
+          <div className="inline-flex items-center px-6 py-3 bg-secondary-100 border border-secondary-200 rounded-lg text-secondary-700 text-sm font-medium mb-6">
             <Smartphone className="w-4 h-4 mr-2" />
-            Interactive Mobile Onboarding
+            Client Onboarding Process
           </div>
           
-          <h1 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-4">
-            Welcome to JKG Design
+          <h1 className="text-4xl md:text-5xl font-display font-bold text-secondary-900 mb-6">
+            Welcome to JKG Design Prodigy
           </h1>
           
-          <p className="text-xl text-gray-600 mb-8">
-            Let's create something amazing together. This cultural-aware onboarding 
-            adapts to your East African business context.
+          <p className="text-xl text-secondary-600 mb-12 max-w-3xl mx-auto">
+            Let's get started with your project. Our streamlined onboarding process 
+            ensures we understand your needs perfectly.
           </p>
 
           {/* Progress Bar */}
           <div className="max-w-md mx-auto">
-            <div className="flex justify-between text-sm text-gray-500 mb-2">
+            <div className="flex justify-between text-sm text-secondary-600 mb-3">
               <span>Step {currentStep} of {totalSteps}</span>
               <span>{Math.round(progress)}% Complete</span>
             </div>
-            <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+            <div className="h-2 bg-secondary-200 rounded-full overflow-hidden">
               <motion.div
-                className="h-full bg-gradient-to-r from-blue-500 to-purple-600"
+                className="h-full bg-primary-500"
                 animate={{ width: `${progress}%` }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
               />
@@ -193,7 +193,7 @@ export default function ClientOnboardingDemo() {
         </motion.div>
 
         {/* Onboarding Steps */}
-        <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
+        <div className="bg-white rounded-lg border border-secondary-200 shadow-sm overflow-hidden">
           <AnimatePresence mode="wait">
             {/* Step 1: Language & Location */}
             {currentStep === 1 && (
@@ -204,9 +204,11 @@ export default function ClientOnboardingDemo() {
                 exit={{ opacity: 0, x: -20 }}
                 className="p-8"
               >
-                <div className="flex items-center mb-6">
-                  <Globe className="w-8 h-8 text-blue-600 mr-3" />
-                  <h2 className="text-2xl font-bold text-gray-900">
+                <div className="flex items-center mb-8">
+                  <div className="p-2 bg-primary-50 rounded-lg mr-4">
+                    <Globe className="w-6 h-6 text-primary-500" />
+                  </div>
+                  <h2 className="text-2xl font-bold text-secondary-900">
                     Let's Get to Know You
                   </h2>
                 </div>

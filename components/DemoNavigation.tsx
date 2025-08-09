@@ -41,7 +41,7 @@ export default function DemoNavigation({ currentDemo, setCurrentDemo }: DemoNavi
   return (
     <>
       {/* Desktop Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200/50">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-secondary-200">
         <div className="container-africa">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
@@ -50,14 +50,14 @@ export default function DemoNavigation({ currentDemo, setCurrentDemo }: DemoNavi
               animate={{ opacity: 1, x: 0 }}
               className="flex items-center space-x-3"
             >
-              <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center">
+              <div className="w-10 h-10 bg-primary-500 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">JKG</span>
               </div>
               <div>
-                <div className="font-display font-bold text-gray-900 text-lg">
+                <div className="font-display font-bold text-secondary-900 text-xl">
                   JKG Design Prodigy
                 </div>
-                <div className="text-sm text-gray-500 -mt-1">
+                <div className="text-sm text-secondary-500 -mt-1">
                   Interactive Demo Suite
                 </div>
               </div>
@@ -73,8 +73,8 @@ export default function DemoNavigation({ currentDemo, setCurrentDemo }: DemoNavi
                     onClick={() => handleNavClick(item.id as DemoSection)}
                     className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 flex items-center space-x-2 ${
                       isActive
-                        ? 'text-primary-600 bg-primary-50'
-                        : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+                        ? 'text-primary-500 bg-primary-50'
+                        : 'text-secondary-600 hover:text-secondary-900 hover:bg-secondary-50'
                     }`}
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}

@@ -2,18 +2,20 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-/* East African Design System */
+/* JKG Design Prodigy - Client Design System */
 :root {
   --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-poppins: 'Poppins', system-ui, -apple-system, sans-serif;
+  --font-poppins: 'Inter', system-ui, -apple-system, sans-serif;
   
-  /* Cultural color palette */
-  --color-primary: #6366f1;
-  --color-secondary: #f59e0b;
-  --color-accent: #10b981;
-  --color-sunset: #ea580c;
-  --color-sunrise: #facc15;
-  --color-earth: #a3a3a3;
+  /* Client's professional color palette */
+  --color-primary: #2563eb;
+  --color-secondary: #1a1a1a;
+  --color-accent: #2563eb;
+  --color-text: #1a1a1a;
+  --color-text-secondary: #6b7280;
+  --color-background: #ffffff;
+  --color-background-alt: #f8f9fa;
+  --color-border: #e5e7eb;
 }
 
 /* Base styles optimized for African mobile devices */
@@ -136,22 +138,22 @@ input, textarea, select {
   background-size: 20px 20px;
 }
 
-/* Utility classes */
+/* Utility classes - Client's layout system */
 .container-africa {
-  max-width: 1280px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 1.25rem;
 }
 
 @media (min-width: 640px) {
   .container-africa {
-    padding: 0 2rem;
+    padding: 0 2.5rem;
   }
 }
 
 @media (min-width: 1024px) {
   .container-africa {
-    padding: 0 4rem;
+    padding: 0 5rem;
   }
 }
 
