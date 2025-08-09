@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
   Globe, 
@@ -154,7 +154,7 @@ export default function ClientOnboardingDemo() {
   const progress = (currentStep / totalSteps) * 100
 
   return (
-    <div className="min-h-screen pt-32 pb-16 bg-white">
+    <div className="min-h-screen pt-32 pb-16 bg-gradient-to-br from-white via-primary-50 to-coral-50">
       <div className="container-africa max-w-4xl">
         {/* Header */}
         <motion.div
@@ -162,29 +162,32 @@ export default function ClientOnboardingDemo() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center px-6 py-3 bg-secondary-100 border border-secondary-200 rounded-lg text-secondary-700 text-sm font-medium mb-6">
+          <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-100 to-coral-100 backdrop-blur-sm rounded-full text-primary-700 text-sm font-medium mb-6">
             <Smartphone className="w-4 h-4 mr-2" />
-            Client Onboarding Process
+            AI-Powered Client Onboarding
           </div>
           
-          <h1 className="text-4xl md:text-5xl font-display font-bold text-secondary-900 mb-6">
-            Welcome to JKG Design Prodigy
+          <h1 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
+            Welcome to Your
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-coral-500">
+              Creative Journey
+            </span>
           </h1>
           
-          <p className="text-xl text-secondary-600 mb-12 max-w-3xl mx-auto">
-            Let's get started with your project. Our streamlined onboarding process 
-            ensures we understand your needs perfectly.
+          <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
+            Our AI-enhanced onboarding process learns your unique needs and crafts 
+            the perfect creative strategy for your brand.
           </p>
 
           {/* Progress Bar */}
           <div className="max-w-md mx-auto">
-            <div className="flex justify-between text-sm text-secondary-600 mb-3">
+            <div className="flex justify-between text-sm text-gray-600 mb-3 font-medium">
               <span>Step {currentStep} of {totalSteps}</span>
               <span>{Math.round(progress)}% Complete</span>
             </div>
-            <div className="h-2 bg-secondary-200 rounded-full overflow-hidden">
+            <div className="h-3 bg-gray-200 rounded-full overflow-hidden shadow-inner">
               <motion.div
-                className="h-full bg-primary-500"
+                className="h-full bg-gradient-to-r from-primary-500 to-coral-500 shadow-sm"
                 animate={{ width: `${progress}%` }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
               />
@@ -193,7 +196,7 @@ export default function ClientOnboardingDemo() {
         </motion.div>
 
         {/* Onboarding Steps */}
-        <div className="bg-white rounded-lg border border-secondary-200 shadow-sm overflow-hidden">
+        <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-white/50">
           <AnimatePresence mode="wait">
             {/* Step 1: Language & Location */}
             {currentStep === 1 && (
@@ -205,10 +208,10 @@ export default function ClientOnboardingDemo() {
                 className="p-8"
               >
                 <div className="flex items-center mb-8">
-                  <div className="p-2 bg-primary-50 rounded-lg mr-4">
-                    <Globe className="w-6 h-6 text-primary-500" />
+                  <div className="p-3 bg-gradient-to-br from-primary-100 to-coral-100 rounded-2xl mr-4">
+                    <Globe className="w-6 h-6 text-primary-600" />
                   </div>
-                  <h2 className="text-2xl font-bold text-secondary-900">
+                  <h2 className="text-2xl font-display font-bold text-gray-900">
                     Let's Get to Know You
                   </h2>
                 </div>
@@ -224,10 +227,10 @@ export default function ClientOnboardingDemo() {
                         <button
                           key={lang.code}
                           onClick={() => updateFormData('language', lang.code)}
-                          className={`w-full p-4 rounded-xl border-2 transition-all duration-300 flex items-center space-x-3 ${
+                          className={`w-full p-4 rounded-2xl border-2 transition-all duration-300 flex items-center space-x-3 hover:scale-[1.02] ${
                             formData.language === lang.code
-                              ? 'border-blue-500 bg-blue-50 text-blue-700'
-                              : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
+                              ? 'border-primary-500 bg-gradient-to-r from-primary-50 to-coral-50 text-primary-700 shadow-lg'
+                              : 'border-gray-200 hover:border-primary-300 hover:bg-gray-50'
                           }`}
                         >
                           <span className="text-2xl">{lang.flag}</span>
@@ -247,10 +250,10 @@ export default function ClientOnboardingDemo() {
                         <button
                           key={location.code}
                           onClick={() => updateFormData('location', location.code)}
-                          className={`w-full p-4 rounded-xl border-2 transition-all duration-300 flex items-center space-x-3 ${
+                          className={`w-full p-4 rounded-2xl border-2 transition-all duration-300 flex items-center space-x-3 hover:scale-[1.02] ${
                             formData.location === location.code
-                              ? 'border-blue-500 bg-blue-50 text-blue-700'
-                              : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
+                              ? 'border-primary-500 bg-gradient-to-r from-primary-50 to-coral-50 text-primary-700 shadow-lg'
+                              : 'border-gray-200 hover:border-primary-300 hover:bg-gray-50'
                           }`}
                         >
                           <span className="text-2xl">{location.flag}</span>
@@ -274,10 +277,10 @@ export default function ClientOnboardingDemo() {
                       <button
                         key={culture.id}
                         onClick={() => updateFormData('businessCulture', culture.id)}
-                        className={`p-4 rounded-xl border-2 transition-all duration-300 text-left ${
+                        className={`p-4 rounded-2xl border-2 transition-all duration-300 text-left hover:scale-[1.02] ${
                           formData.businessCulture === culture.id
-                            ? 'border-blue-500 bg-blue-50'
-                            : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
+                            ? 'border-primary-500 bg-gradient-to-r from-primary-50 to-coral-50 shadow-lg'
+                            : 'border-gray-200 hover:border-primary-300 hover:bg-gray-50'
                         }`}
                       >
                         <div className="font-semibold text-gray-900 mb-2">
@@ -303,8 +306,10 @@ export default function ClientOnboardingDemo() {
                 className="p-8"
               >
                 <div className="flex items-center mb-6">
-                  <Building2 className="w-8 h-8 text-blue-600 mr-3" />
-                  <h2 className="text-2xl font-bold text-gray-900">
+                  <div className="p-3 bg-gradient-to-br from-secondary-100 to-lime-100 rounded-2xl mr-4">
+                    <Building2 className="w-6 h-6 text-secondary-600" />
+                  </div>
+                  <h2 className="text-2xl font-display font-bold text-gray-900">
                     About Your Business
                   </h2>
                 </div>
@@ -319,7 +324,7 @@ export default function ClientOnboardingDemo() {
                       value={formData.companyName}
                       onChange={(e) => updateFormData('companyName', e.target.value)}
                       placeholder="Enter your company name"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-lg transition-all duration-300 hover:border-primary-300"
                     />
                   </div>
 
@@ -330,7 +335,7 @@ export default function ClientOnboardingDemo() {
                     <select
                       value={formData.industry}
                       onChange={(e) => updateFormData('industry', e.target.value)}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-lg transition-all duration-300 hover:border-primary-300"
                     >
                       <option value="">Select your industry</option>
                       {industries.map((industry) => (
@@ -350,10 +355,10 @@ export default function ClientOnboardingDemo() {
                         <button
                           key={service.id}
                           onClick={() => toggleArrayValue('services', service.id)}
-                          className={`p-4 rounded-xl border-2 transition-all duration-300 flex flex-col items-center space-y-2 ${
+                          className={`p-4 rounded-2xl border-2 transition-all duration-300 flex flex-col items-center space-y-2 hover:scale-105 ${
                             formData.services.includes(service.id)
-                              ? 'border-blue-500 bg-blue-50 text-blue-700'
-                              : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
+                              ? 'border-lime-500 bg-gradient-to-br from-lime-50 to-primary-50 text-lime-700 shadow-lg'
+                              : 'border-gray-200 hover:border-lime-300 hover:bg-gray-50'
                           }`}
                         >
                           <span className="text-2xl">{service.icon}</span>
@@ -381,8 +386,10 @@ export default function ClientOnboardingDemo() {
                 className="p-8"
               >
                 <div className="flex items-center mb-6">
-                  <Target className="w-8 h-8 text-blue-600 mr-3" />
-                  <h2 className="text-2xl font-bold text-gray-900">
+                  <div className="p-3 bg-gradient-to-br from-coral-100 to-primary-100 rounded-2xl mr-4">
+                    <Target className="w-6 h-6 text-coral-600" />
+                  </div>
+                  <h2 className="text-2xl font-display font-bold text-gray-900">
                     Project Scope
                   </h2>
                 </div>
@@ -399,10 +406,10 @@ export default function ClientOnboardingDemo() {
                         <button
                           key={range}
                           onClick={() => updateFormData('budget', range)}
-                          className={`w-full p-3 rounded-lg border-2 transition-all duration-300 text-left ${
+                          className={`w-full p-3 rounded-xl border-2 transition-all duration-300 text-left hover:scale-[1.02] ${
                             formData.budget === range
-                              ? 'border-blue-500 bg-blue-50 text-blue-700'
-                              : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
+                              ? 'border-coral-500 bg-gradient-to-r from-coral-50 to-primary-50 text-coral-700 shadow-md'
+                              : 'border-gray-200 hover:border-coral-300 hover:bg-gray-50'
                           }`}
                         >
                           {range}
@@ -422,10 +429,10 @@ export default function ClientOnboardingDemo() {
                         <button
                           key={timeline}
                           onClick={() => updateFormData('timeline', timeline)}
-                          className={`w-full p-3 rounded-lg border-2 transition-all duration-300 text-left ${
+                          className={`w-full p-3 rounded-xl border-2 transition-all duration-300 text-left hover:scale-[1.02] ${
                             formData.timeline === timeline
-                              ? 'border-blue-500 bg-blue-50 text-blue-700'
-                              : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
+                              ? 'border-secondary-500 bg-gradient-to-r from-secondary-50 to-primary-50 text-secondary-700 shadow-md'
+                              : 'border-gray-200 hover:border-secondary-300 hover:bg-gray-50'
                           }`}
                         >
                           {timeline}
@@ -447,8 +454,10 @@ export default function ClientOnboardingDemo() {
                 className="p-8"
               >
                 <div className="flex items-center mb-6">
-                  <Palette className="w-8 h-8 text-blue-600 mr-3" />
-                  <h2 className="text-2xl font-bold text-gray-900">
+                  <div className="p-3 bg-gradient-to-br from-lime-100 to-coral-100 rounded-2xl mr-4">
+                    <Palette className="w-6 h-6 text-lime-600" />
+                  </div>
+                  <h2 className="text-2xl font-display font-bold text-gray-900">
                     Brand Personality
                   </h2>
                 </div>
@@ -462,10 +471,10 @@ export default function ClientOnboardingDemo() {
                       <button
                         key={personality.id}
                         onClick={() => toggleArrayValue('brandPersonality', personality.id)}
-                        className={`p-4 rounded-xl border-2 transition-all duration-300 flex flex-col items-center space-y-2 ${
+                        className={`p-4 rounded-2xl border-2 transition-all duration-300 flex flex-col items-center space-y-2 hover:scale-105 ${
                           formData.brandPersonality.includes(personality.id)
-                            ? 'border-blue-500 bg-blue-50 text-blue-700'
-                            : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
+                            ? 'border-primary-500 bg-gradient-to-br from-primary-50 to-lime-50 text-primary-700 shadow-lg'
+                            : 'border-gray-200 hover:border-primary-300 hover:bg-gray-50'
                         }`}
                       >
                         <span className="text-3xl">{personality.emoji}</span>
@@ -489,10 +498,10 @@ export default function ClientOnboardingDemo() {
                       <button
                         key={comm.id}
                         onClick={() => updateFormData('communicationStyle', comm.id)}
-                        className={`w-full p-4 rounded-xl border-2 transition-all duration-300 text-left ${
+                        className={`w-full p-4 rounded-2xl border-2 transition-all duration-300 text-left hover:scale-[1.02] ${
                           formData.communicationStyle === comm.id
-                            ? 'border-blue-500 bg-blue-50'
-                            : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
+                            ? 'border-secondary-500 bg-gradient-to-r from-secondary-50 to-coral-50 shadow-md'
+                            : 'border-gray-200 hover:border-secondary-300 hover:bg-gray-50'
                         }`}
                       >
                         <div className="font-semibold text-gray-900">{comm.name}</div>
@@ -514,8 +523,10 @@ export default function ClientOnboardingDemo() {
                 className="p-8"
               >
                 <div className="flex items-center mb-6">
-                  <CheckCircle2 className="w-8 h-8 text-green-600 mr-3" />
-                  <h2 className="text-2xl font-bold text-gray-900">
+                  <div className="p-3 bg-gradient-to-br from-lime-100 to-primary-100 rounded-2xl mr-4">
+                    <CheckCircle2 className="w-6 h-6 text-lime-600" />
+                  </div>
+                  <h2 className="text-2xl font-display font-bold text-gray-900">
                     Tell Us More
                   </h2>
                 </div>
@@ -530,12 +541,12 @@ export default function ClientOnboardingDemo() {
                       onChange={(e) => updateFormData('message', e.target.value)}
                       placeholder="Share any specific goals, challenges, or inspiration for your project. The more details you provide, the better we can serve you!"
                       rows={6}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg resize-none"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-lg resize-none transition-all duration-300 hover:border-primary-300"
                     />
                   </div>
 
                   {/* Summary */}
-                  <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6">
+                  <div className="bg-gradient-to-br from-primary-50 via-coral-50 to-lime-50 rounded-2xl p-6 border border-white/50">
                     <h3 className="font-semibold text-gray-900 mb-4">Project Summary</h3>
                     <div className="grid md:grid-cols-2 gap-4 text-sm">
                       <div>
@@ -566,14 +577,14 @@ export default function ClientOnboardingDemo() {
           </AnimatePresence>
 
           {/* Navigation */}
-          <div className="px-8 py-6 bg-gray-50 border-t flex justify-between items-center">
+          <div className="px-8 py-6 bg-gradient-to-r from-gray-50 to-primary-50 border-t border-gray-200 flex justify-between items-center">
             <button
               onClick={handlePrevious}
               disabled={currentStep === 1}
-              className={`flex items-center space-x-2 px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
+              className={`flex items-center space-x-2 px-6 py-3 rounded-2xl font-medium transition-all duration-300 ${
                 currentStep === 1
                   ? 'text-gray-400 cursor-not-allowed'
-                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+                  : 'text-gray-600 hover:text-gray-900 hover:bg-white/50 hover:shadow-md'
               }`}
             >
               <ArrowLeft className="w-4 h-4" />
@@ -583,7 +594,7 @@ export default function ClientOnboardingDemo() {
             {currentStep < totalSteps ? (
               <button
                 onClick={handleNext}
-                className="flex items-center space-x-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-medium transition-all duration-300"
+                className="flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-primary-500 to-secondary-500 hover:from-primary-600 hover:to-secondary-600 text-white rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
               >
                 <span>Continue</span>
                 <ArrowRight className="w-4 h-4" />
@@ -591,7 +602,7 @@ export default function ClientOnboardingDemo() {
             ) : (
               <button
                 onClick={handleSubmit}
-                className="flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white rounded-xl font-medium transition-all duration-300"
+                className="flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-lime-500 to-coral-500 hover:from-lime-600 hover:to-coral-600 text-white rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
               >
                 <span>Generate AI Brief</span>
                 <CheckCircle2 className="w-4 h-4" />

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
   Users, 
@@ -217,7 +217,7 @@ export default function CRMDashboardDemo() {
   }
 
   return (
-    <div className="min-h-screen pt-32 pb-16 bg-gradient-to-br from-orange-50 via-red-50 to-pink-50">
+    <div className="min-h-screen pt-32 pb-16 bg-gradient-to-br from-white via-lime-50 to-secondary-50">
       <div className="container-africa">
         {/* Header */}
         <motion.div
@@ -225,24 +225,27 @@ export default function CRMDashboardDemo() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <div className="inline-flex items-center px-4 py-2 bg-orange-100 rounded-full text-orange-700 text-sm font-medium mb-4">
+          <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-lime-100 to-secondary-100 backdrop-blur-sm rounded-full text-lime-700 text-sm font-medium mb-6">
             <BarChart3 className="w-4 h-4 mr-2" />
             AI-Powered CRM Dashboard
           </div>
           
-          <h1 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-4">
-            Smart Lead Management
+          <h1 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
+            Smart Lead
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-lime-500 to-secondary-500">
+              Management
+            </span>
           </h1>
           
-          <p className="text-xl text-gray-600 mb-8">
-            Predictive analytics, WhatsApp integration, and cultural intelligence 
-            for East African market optimization.
+          <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            AI-driven predictive analytics, WhatsApp integration, and cultural intelligence 
+            for East African market optimization and lead conversion.
           </p>
 
           <div className="flex flex-wrap gap-4 justify-center">
             <button
               onClick={simulateAIInsight}
-              className="px-6 py-3 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white rounded-xl font-medium transition-all duration-300 flex items-center shadow-lg hover:shadow-xl"
+              className="px-8 py-4 bg-gradient-to-r from-lime-500 to-secondary-500 hover:from-lime-600 hover:to-secondary-600 text-white rounded-full font-bold transition-all duration-300 flex items-center shadow-xl hover:shadow-2xl hover:scale-105"
             >
               <Zap className="w-4 h-4 mr-2" />
               Generate AI Insights
@@ -250,7 +253,7 @@ export default function CRMDashboardDemo() {
             
             <button
               onClick={() => setShowNewLeadForm(true)}
-              className="px-6 py-3 bg-white/80 backdrop-blur-sm hover:bg-white text-gray-700 rounded-xl font-medium transition-all duration-300 border border-gray-200 hover:border-gray-300 flex items-center"
+              className="px-8 py-4 bg-white/80 backdrop-blur-sm hover:bg-white text-gray-700 rounded-full font-bold transition-all duration-300 border-2 border-gray-200 hover:border-lime-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center"
             >
               <UserPlus className="w-4 h-4 mr-2" />
               Add New Lead

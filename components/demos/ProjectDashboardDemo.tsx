@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
   Calendar, 
@@ -166,7 +166,7 @@ export default function ProjectDashboardDemo() {
   }
 
   return (
-    <div className="min-h-screen pt-32 pb-16 bg-gradient-to-br from-purple-50 via-pink-50 to-orange-50">
+    <div className="min-h-screen pt-32 pb-16 bg-gradient-to-br from-white via-secondary-50 to-lime-50">
       <div className="container-africa">
         {/* Header */}
         <motion.div
@@ -174,27 +174,29 @@ export default function ProjectDashboardDemo() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <div className="inline-flex items-center px-4 py-2 bg-purple-100 rounded-full text-purple-700 text-sm font-medium mb-4">
+          <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-secondary-100 to-lime-100 backdrop-blur-sm rounded-full text-secondary-700 text-sm font-medium mb-6">
             <Target className="w-4 h-4 mr-2" />
-            Real-Time Project Dashboard
+            AI-Powered Project Dashboard
           </div>
           
-          <h1 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-4">
-            Live Project Tracking
+          <h1 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
+            Live Project
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-secondary-500 to-lime-500">
+              Tracking
+            </span>
           </h1>
           
-          <p className="text-xl text-gray-600 mb-8">
-            Monitor project progress in real-time with cultural milestone celebrations 
-            and intelligent status updates.
+          <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            Monitor project progress in real-time with AI-powered insights, cultural milestone celebrations, and intelligent status updates.
           </p>
 
           <button
             onClick={simulateProgress}
             disabled={isSimulating}
-            className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center mx-auto ${
+            className={`px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 flex items-center mx-auto ${
               isSimulating 
                 ? 'bg-gray-400 text-white cursor-not-allowed' 
-                : 'bg-purple-600 hover:bg-purple-700 text-white shadow-lg hover:shadow-xl'
+                : 'bg-gradient-to-r from-secondary-500 to-lime-500 hover:from-secondary-600 hover:to-lime-600 text-white shadow-xl hover:shadow-2xl hover:scale-105'
             }`}
           >
             <Play className="w-4 h-4 mr-2" />

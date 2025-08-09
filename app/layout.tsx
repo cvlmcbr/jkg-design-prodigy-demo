@@ -1,12 +1,13 @@
 import type { Metadata } from 'next'
-import { Inter, Poppins } from 'next/font/google'
+import { Montserrat, Poppins, Open_Sans, Lato } from 'next/font/google'
 import './globals.css'
 import { Toaster } from 'react-hot-toast'
 
-const inter = Inter({ 
+const montserrat = Montserrat({ 
   subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
   display: 'swap',
-  variable: '--font-inter',
+  variable: '--font-montserrat',
 })
 
 const poppins = Poppins({ 
@@ -14,6 +15,19 @@ const poppins = Poppins({
   weight: ['400', '500', '600', '700'],
   display: 'swap',
   variable: '--font-poppins',
+})
+
+const openSans = Open_Sans({ 
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-open-sans',
+})
+
+const lato = Lato({ 
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  display: 'swap',
+  variable: '--font-lato',
 })
 
 export const metadata: Metadata = {
@@ -34,8 +48,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
-      <body className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 font-sans antialiased">
+    <html lang="en" className={`${montserrat.variable} ${poppins.variable} ${openSans.variable} ${lato.variable}`}>
+      <body className="min-h-screen font-sans antialiased">
         <Toaster 
           position="top-right"
           toastOptions={{

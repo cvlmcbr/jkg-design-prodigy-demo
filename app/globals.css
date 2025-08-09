@@ -2,19 +2,22 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-/* JKG Design Prodigy - Client Design System */
+/* JKG Design Prodigy - Creative Design System */
 :root {
-  --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-poppins: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-montserrat: 'Montserrat', system-ui, -apple-system, sans-serif;
+  --font-poppins: 'Poppins', system-ui, -apple-system, sans-serif;
+  --font-open-sans: 'Open Sans', system-ui, -apple-system, sans-serif;
+  --font-lato: 'Lato', system-ui, -apple-system, sans-serif;
   
-  /* Client's professional color palette */
-  --color-primary: #2563eb;
-  --color-secondary: #1a1a1a;
-  --color-accent: #2563eb;
-  --color-text: #1a1a1a;
+  /* Client's creative color palette - vibrant and modern */
+  --color-deep-purple: #7c3aed;
+  --color-deep-blue: #3b82f6;
+  --color-coral: #ff6b6b;
+  --color-lime: #84cc16;
+  --color-text: #1f2937;
   --color-text-secondary: #6b7280;
   --color-background: #ffffff;
-  --color-background-alt: #f8f9fa;
+  --color-background-alt: #f9fafb;
   --color-border: #e5e7eb;
 }
 

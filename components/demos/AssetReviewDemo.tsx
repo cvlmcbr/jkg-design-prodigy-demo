@@ -260,7 +260,7 @@ export default function AssetReviewDemo() {
   })
 
   return (
-    <div className="min-h-screen pt-32 pb-16 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
+    <div className="min-h-screen pt-32 pb-16 bg-gradient-to-br from-white via-coral-50 to-primary-50">
       <div className="container-africa">
         {/* Header */}
         <motion.div
@@ -268,24 +268,27 @@ export default function AssetReviewDemo() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <div className="inline-flex items-center px-4 py-2 bg-green-100 rounded-full text-green-700 text-sm font-medium mb-4">
+          <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-coral-100 to-primary-100 backdrop-blur-sm rounded-full text-coral-700 text-sm font-medium mb-6">
             <CheckCircle2 className="w-4 h-4 mr-2" />
-            Asset Review & Approval System
+            AI-Enhanced Asset Review System
           </div>
           
-          <h1 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-4">
-            Streamlined Asset Reviews
+          <h1 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
+            Streamlined Asset
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-coral-500 to-primary-500">
+              Review Hub
+            </span>
           </h1>
           
-          <p className="text-xl text-gray-600 mb-8">
-            Intuitive approval workflow with real-time collaboration, 
-            instant WhatsApp notifications, and version control.
+          <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            AI-powered approval workflow with real-time collaboration, 
+            instant WhatsApp notifications, and intelligent version control.
           </p>
 
           <div className="flex flex-wrap gap-4 justify-center">
             <button
               onClick={() => toast.success('🚀 Simulating bulk approval workflow...')}
-              className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-xl font-medium transition-all duration-300 flex items-center shadow-lg hover:shadow-xl"
+              className="px-8 py-4 bg-gradient-to-r from-lime-500 to-primary-500 hover:from-lime-600 hover:to-primary-600 text-white rounded-full font-bold transition-all duration-300 flex items-center shadow-xl hover:shadow-2xl hover:scale-105"
             >
               <CheckCircle2 className="w-4 h-4 mr-2" />
               Simulate Bulk Approval
@@ -293,7 +296,7 @@ export default function AssetReviewDemo() {
             
             <button
               onClick={() => toast.success('📱 WhatsApp integration demo activated!')}
-              className="px-6 py-3 bg-white/80 backdrop-blur-sm hover:bg-white text-gray-700 rounded-xl font-medium transition-all duration-300 border border-gray-200 hover:border-gray-300"
+              className="px-8 py-4 bg-white/80 backdrop-blur-sm hover:bg-white text-gray-700 rounded-full font-bold transition-all duration-300 border-2 border-gray-200 hover:border-coral-300 shadow-lg hover:shadow-xl hover:scale-105"
             >
               <MessageSquare className="w-4 h-4 mr-2" />
               Test WhatsApp Notifications
@@ -307,7 +310,7 @@ export default function AssetReviewDemo() {
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="bg-white rounded-3xl shadow-xl p-6 sticky top-32"
+              className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl p-6 sticky top-32 border border-white/50"
             >
               <h3 className="font-bold text-gray-900 mb-6">Filters & Search</h3>
               
@@ -452,7 +455,7 @@ export default function AssetReviewDemo() {
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.1 * index }}
-                        className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
+                        className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden group border border-white/50 hover:scale-[1.02]"
                       >
                         {/* Asset Preview */}
                         <div className="relative h-48 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
@@ -561,7 +564,7 @@ export default function AssetReviewDemo() {
                   })}
                 </div>
               ) : (
-                <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-white/50">
                   <div className="overflow-x-auto">
                     <table className="w-full">
                       <thead className="bg-gray-50 border-b border-gray-200">
@@ -669,7 +672,7 @@ export default function AssetReviewDemo() {
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.9, opacity: 0 }}
-                className="bg-white rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+                className="bg-white/95 backdrop-blur-lg rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-white/50"
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="p-8">

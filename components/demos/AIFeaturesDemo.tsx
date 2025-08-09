@@ -282,7 +282,7 @@ export default function AIFeaturesDemo() {
   ]
 
   return (
-    <div className="min-h-screen pt-32 pb-16 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
+    <div className="min-h-screen pt-32 pb-16 bg-gradient-to-br from-white via-primary-50 to-lime-50">
       <div className="container-africa">
         {/* Header */}
         <motion.div
@@ -290,18 +290,21 @@ export default function AIFeaturesDemo() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <div className="inline-flex items-center px-4 py-2 bg-purple-100 rounded-full text-purple-700 text-sm font-medium mb-4">
+          <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-100 to-lime-100 backdrop-blur-sm rounded-full text-primary-700 text-sm font-medium mb-6">
             <Brain className="w-4 h-4 mr-2" />
             AI-Powered Creative Intelligence
           </div>
           
-          <h1 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-4">
-            Cultural AI Features
+          <h1 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
+            Cultural AI
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-lime-500">
+              Features
+            </span>
           </h1>
           
-          <p className="text-xl text-gray-600 mb-8">
+          <p className="text-xl text-gray-600 mb-8 leading-relaxed">
             Advanced AI capabilities designed specifically for East African creative markets, 
-            with cultural intelligence and local context understanding.
+            with cultural intelligence, local context understanding, and creative excellence.
           </p>
 
           {/* Quick Demo Scenarios */}
